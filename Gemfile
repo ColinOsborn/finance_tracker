@@ -3,7 +3,10 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-gem("rails", "~> 5.2.4.4")
+
+ruby '3.1.4'
+
+gem 'rails', '~> 7.0.4.2'
 gem("devise")
 gem("execjs")
 gem("twitter-bootstrap-rails")
