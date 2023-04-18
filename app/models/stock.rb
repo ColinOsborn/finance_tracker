@@ -8,12 +8,12 @@ class Stock < ApplicationRecord
 
   def self.new_from_lookup(ticker_symbol)
     begin
-      client = IEX::Api::Client.new(publishable_token: 'PUBLISHABLE TOKEN HERE')
+      client = IEX::Api::Client.new(publishable_token: 'pk_')
       looked_up_stock = client.quote(ticker_symbol)
       new(name: looked_up_stock.company_name,
           ticker: looked_up_stock.symbol, last_price: looked_up_stock.latest_price)
     rescue Exception => e
-      return nil
+      return "There's been an error retrieving the stocks"
     end
   end
 end
