@@ -7,6 +7,7 @@ end
 ruby '3.1.4'
 
 gem 'rails', '~> 7.0.4.2'
+gem 'webpacker'
 gem("devise")
 gem("execjs")
 gem("twitter-bootstrap-rails")
